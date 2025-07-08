@@ -1,0 +1,190 @@
+*{
+    box-sizing: border-box;
+   
+    
+}
+body{
+    
+    border-radius: 32px;
+    padding: 10px;
+    color: grey;
+    background-repeat: no repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+   font-size: x-large;
+    background-color:rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+   
+}
+
+.wrapper{
+    max-inline-size: 1000px;
+    margin: auto;
+    padding: 10px;
+    
+}
+.guides{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    
+    gap: 10px;
+
+}
+.guide{
+    padding: 20px;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 30px;
+    
+     border:  rgb(157, 157, 166) solid; 
+}
+
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    background-color: rgb(56, 56, 196);
+    color: white;
+    padding: 50px 100px 100px 100px;
+    
+    margin-top: 10px;
+    
+}
+.foot{
+    display: flex;
+}
+.down{
+    color: white;
+    font-weight: 900;
+    font-size: xx-large;
+
+}
+.bottom_nav{
+    display: grid;
+    color: white;
+}
+.bottom_nav > a{
+       color: white;
+       text-decoration: none;
+}
+    /* headings and links */
+
+.heading_color{ 
+    color: rgb(157, 157, 166);
+    font-weight: 900;
+    font-size: xx-large;
+}
+.heading_color_1{
+     color: rgb(56, 56, 196);
+     font-size: xx-large;
+     font-weight: 900;
+}
+ 
+.another_styling_for_a_different_header{
+    color: #10B981;
+}
+/* form designs */
+.form_designs{
+    display: grid;
+}
+
+.card{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        max-inline-size: 1000px;
+        margin: auto;
+        block-size:500px;
+        /* border-right: solid blue;
+        border-top: solid blue;
+        border-bottom: solid blue; */
+        margin-top: 50px;
+        border-radius: 26px;
+         background-color: blue ;
+    
+        
+
+}
+.left{
+   
+    
+}
+.right{
+    padding: 15px;
+    background-color: white;
+    border-radius: 26px;
+    
+
+}
+.otherbody{
+    background-image: url(../PROJECT/IMAGES/WhatsApp\ Image\ 2025-06-26\ at\ 21.07.02_afe2743e.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.overide{
+    text-decoration: none;
+}
+.forms{
+    border: none;
+    border-bottom: gray solid 1px;
+}
+ .card{ 
+    
+    max-inline-size:  300px;
+    margin:   auto;
+    padding: 40px 100px;
+    background-color: rgb(188, 188, 128);
+    border-radius: 32px;
+}
+#the_body{
+    background-image: linear-gradient( #85bddc, #10B981);
+    background-repeat: no-repeat;
+}
+.fixed{
+    padding: 10px 40px;
+    border-radius: 32px;
+}
+
+/* header styling */
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.middle_nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 500;
+    font-size: x-large;
+}
+.end_nav{ 
+    display: grid;
+}
+
+/* Tutorial page design  */
+section{
+    border-top: solid gray 1px;
+    border-left: solid gray 1px;
+    
+    border-radius: 26px;
+    padding: 10px;
+    margin: 10px;
+
+}
+.this_section{
+    background-color: yellow;
+}
