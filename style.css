@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
    
     
 }
@@ -19,11 +20,15 @@ body{
     
    
 }
+.one{
+    color: blue;
+}
 
 .wrapper{
     max-inline-size: 1000px;
     margin: auto;
     padding: 10px;
+    
     
 }
 .guides{
