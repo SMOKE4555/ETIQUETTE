@@ -186,8 +186,9 @@ nav{
 .services{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 article{
     flex: 2;
-    
+  
 }
