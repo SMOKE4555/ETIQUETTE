@@ -1,199 +1,115 @@
-*{
-    box-sizing: border-box;
-    
-   
-    
-}
-body{
-    
-    border-radius: 32px;
-    padding: 10px;
-    color: grey;
-    background-repeat: no repeat;
-    background-position: center;
-    background-size: cover;
-    margin: 0px;
-    padding: 0px;
-   font-size: x-large;
-    background-color:rgb(255, 255, 255);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
-   
-}
-.one{
-    color: blue;
-}
+:root {
+  --clr-accent-400:hsl(202, 100%, 51%) ;
+  --clr-accent-100: hsl(217, 70%, 62%);
 
-.wrapper{
-    max-inline-size: 1000px;
-    margin: auto;
-    padding: 10px;
-    
-    
-}
-.guides{
-    display: grid;
-    grid-template-columns: 200px 200px;
-    
-    gap: 10px;
-
-}
-.guide{
-    padding: 20px;
-    text-decoration: none;
-    background-color: white;
-    border-radius: 30px;
-    
-     border:  rgb(157, 157, 166) solid; 
-}
-
-
-footer{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-    background-color: rgb(56, 56, 196);
-    color: white;
-    padding: 50px 100px 100px 100px;
-    
-    margin-top: 10px;
-    
-}
-.foot{
-    display: flex;
-}
-.down{
-    color: white;
-    font-weight: 900;
-    font-size: xx-large;
-
-}
-.bottom_nav{
-    display: grid;
-    color: white;
-}
-.bottom_nav > a{
-       color: white;
-       text-decoration: none;
-}
-    /* headings and links */
-
-.heading_color{ 
-    color: rgb(157, 157, 166);
-    font-weight: 900;
-    font-size: xx-large;
-    align-items: center;
-}
-.heading_color_1{
-     color: rgb(56, 56, 196);
-     font-size: xx-large;
-     font-weight: 900;
-}
- 
-.another_styling_for_a_different_header{
-    color: #10B981;
-}
-/* form designs */
-.form_designs{
-    display: grid;
-}
-
-.card{
-        display: grid;
-        grid-template-columns: 1fr 1fr ;
-        max-inline-size: 1000px;
-        margin: auto;
-        block-size:500px;
-        /* border-right: solid blue;
-        border-top: solid blue;
-        border-bottom: solid blue; */
-        margin-top: 50px;
-        border-radius: 26px;
-         background-color: blue ;
-    
-        
-
-}
-.left{
-   
-    
-}
-.right{
-    padding: 15px;
-    background-color: white;
-    border-radius: 26px;
-    
-
-}
-.otherbody{
-    background-image: url(../PROJECT/IMAGES/WhatsApp\ Image\ 2025-06-26\ at\ 21.07.02_afe2743e.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.buttons{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.overide{
-    text-decoration: none;
-}
-.forms{
-    border: none;
-    border-bottom: gray solid 1px;
-}
- .card{ 
-    
-    max-inline-size:  300px;
-    margin:   auto;
-    padding: 40px 100px;
-    background-color: rgb(188, 188, 128);
-    border-radius: 32px;
-}
-#the_body{
-    background-image: linear-gradient( #85bddc, #10B981);
-    background-repeat: no-repeat;
-}
-.fixed{
-    padding: 10px 40px;
-    border-radius: 32px;
-}
-
-/* header styling */
-nav{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
-}
-.middle_nav{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    
-    flex-wrap: wrap;
-    align-items: center;
-    font-weight: 500;
-    font-size: x-large;
-}
-.end_nav{ 
-    display: flex;
-    gap: 10px;
-}
-
-/* Tutorial page design  */
-
-.this_section{
-    background-color: yellow;
-}
-/* services design */
-.services{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-article{
-    flex: 2;
+  --clr-primary-400: hsl(201, 23%, 24%);
   
+
+  --clr-neutral-100:hsl(200, 100%, 96%) ;
+  --clr-neutral-200: hsl(203, 100%, 93%);
+
+  --font-family-primary:"Roboto Serif", serif ;
+  --font-family-secondary: "Nunito", sans-serif ;
+
+  --font-family-body: var(--font-family-secondary);
+  --font-family-heading: var(--font-family-primary);
+
+  --fw-regular:400;
+  --fw-semi-bold:500;
+  --fw-bold:700;
+
+  --fs-300: .8125rem;
+  --fs-400: .875rem;
+  --fs-500: 1rem;
+  --fs-600: 1.875rem;
+  --fs-700:2.5rem ;
+
+  --fs-nav:var(--fs-500);
+  --fs-button:var(--fs-300);
+
+ 
 }
+@media(min-width: 50em){
+  :root {
+    --fs-700: 3.5rem ;
+    --fs-600:2.5rem;
+
+    --fs-nav:var(--fs-300);
+
+  }
+}
+
+
+    
+body{
+  font-family: var(--font-family-secondary);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html,
+body{
+  height:100% ;
+}
+/* Set core body defaults */
+body {
+  
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
