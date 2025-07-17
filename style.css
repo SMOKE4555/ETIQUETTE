@@ -144,24 +144,8 @@ body{
   font-family: var(--font-family-secondary);
   /* color: var(--clr-neutral-200); */
 }
-.container{
-  --max-width: 1110px;
-  --padding: 1rem;
 
-  width: min(var(--max-width), 100% - (var(--padding) *2));
-  margin-inline: auto;
-}
-.even-columns{
-  display: grid;
-  gap: 1rem;
-}
-@media (min-width: 50em) {
-  .even-columns{
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
 
-  }
-}
 /* button */
 .button{
   display: inline-flex; 
@@ -261,6 +245,28 @@ body{
 
 
 /* Utility classes */
+.container{
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) *2));
+  margin-inline: auto;
+}
+.flow * + *{
+  margin-top: var(--flow-spacer, 4rem);
+  
+}
+.even-columns{
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 50em) {
+  .even-columns{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+  }
+}
 
 .visually-hidden{
   position: absolute;
