@@ -2,6 +2,7 @@
   --clr-accent-400:hsl(202, 100%, 51%) ;
   --clr-accent-100: hsl(217, 70%, 62%);
   --clr-accent-300: hsl(202, 100%, 44%);
+  --clr-accent-200: hsl(216, 54%, 34%);
 
   --clr-primary-400: hsl(201, 23%, 24%);
   --clr-secondary-500: hsl(202, 55%, 13%);
@@ -9,6 +10,7 @@
 
   --clr-neutral-100:hsl(200, 100%, 96%) ;
   --clr-neutral-200: hsl(203, 100%, 93%);
+  --clr-neutral-300: hsl(200, 90%, 96%);
 
   --font-family-primary:"Roboto Serif", serif ;
   --font-family-secondary: "Nunito", sans-serif ;
@@ -29,7 +31,7 @@
   --fs-900: 3rem ; 
   
 
-  --fs-nav:var(--fs-500);
+  --fs-nav:var(--fs-600);
   --fs-button:var(--fs-800);
 
   --size-100: .25rem;
@@ -37,10 +39,10 @@
   --size-300: .75rem;
   --size-400:  1rem;
   --size-500:  2rem;
-  --size-600:  3rem;
+  --size-600:  2.5rem;
   --size-700:  3rem;
-  --size-800:  3rem;
-  --size-900:  3rem;
+  --size-800:  3.5rem;
+  --size-900:  4rem;
 
  
 }
@@ -177,13 +179,12 @@ body{
 .mobile-nav-toggle{
   display: none;
 }
-.nav-list{
-   font-size: var(--fs-nav);
-}
+
 .nav-list{
   display: flex;
   gap: var(--size-900);
   font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-800);
 }
   .nav-list a{
     text-decoration: none;
@@ -282,15 +283,30 @@ body{
 .bg-clr-accent{
  background-color: var(--clr-accent-400);
 }
+.bg-clr-accent-100{
+  background-color: var(--clr-neutral-300);
+}
 .padding-block-800{
   padding: var(--size-800);
 }
 .padding-block-700{
   padding: var(--size-700);
 }
+.clr-accent-400{
+  color: var(--clr-accent-400);
+}
+.margin-block-500{
+  margin-top: var(--size-500);
+}
+/* .fs-nav{
+  font-size: var(--fs-nav);
+} */
 
 .clr-accent-100{
   color: var(--clr-accent-100)
+}
+.clr-accent-200{
+  color: var(--clr-accent-200);
 }
 .font-family-primary{
     font-family: var(--font-family-primary);
