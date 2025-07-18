@@ -168,6 +168,10 @@ body{
     box-sizing: border-box;
     display: block;
   }
+  .flow * + *{
+  margin: var(--flow-spacer, 1rem);
+  
+}
 }
 .button:hover,
 .button:focus-visible{
@@ -260,10 +264,10 @@ body{
   width: min(var(--max-width), 100% - (var(--padding) *2));
   margin-inline: auto;
 }
-.flow * + *{
+/* .flow * + *{
   margin-top: var(--flow-spacer, 4rem);
   
-}
+} */
 .even-columns{
   display: grid;
   gap: 1rem;
