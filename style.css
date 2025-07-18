@@ -154,13 +154,20 @@ body{
   cursor: pointer;
   text-decoration: none;
   border: 0;
-  border-radius: 100vmax;
+  border-radius: 8px;
   padding: .875rem 1.5em;
   font-weight: var(--fw-regular) ;
   color: var(--clr-neutral-100);
   font-size: var(--fs-button);
   box-shadow: 0 1.25em 1em -1em var(--clr-accent-300) ;
   
+}
+@media (max-width: 37.5em) {
+  .button{
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
 }
 .button:hover,
 .button:focus-visible{
