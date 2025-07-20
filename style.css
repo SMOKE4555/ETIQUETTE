@@ -6,7 +6,7 @@
 
   --clr-primary-400: hsl(201, 23%, 24%);
   --clr-secondary-500: hsl(202, 55%, 13%);
-  
+  --clr-tertiary-600: hsl(224, 24%, 59%);
 
   --clr-neutral-100:hsl(200, 100%, 96%) ;
   --clr-neutral-200: hsl(203, 100%, 93%);
@@ -62,7 +62,7 @@
   max-width: 1110px;
   border: solid red 1px;
   margin-inline: auto;
-  padding-right: 2rem;
+  
 }    
 
 p:not([class]) {
@@ -104,7 +104,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   
-
 }
 
 /* A elements that don't have a class get default styles */
@@ -193,7 +192,7 @@ body{
 } 
 @media (max-width: 37.5em) {
   .button{
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
     display: block;
   }
@@ -284,7 +283,45 @@ body{
 }
 }
 
+/* footer-navigation */
+footer{
+  background-color: var(--clr-secondary-500);
+  padding: var(--size-500);
+}
+.Social-links{
+  display: flex;
+  gap: var(--size-400);
+}
+.footer-nav{
+  columns: 2;
+}
+.footer-nav a {
+  color: var(--clr-neutral-300);
+  text-decoration: none;
+}
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-300);
+  
+}
 
+/* cta */
+/* .call-to-action{
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  background-color: var(--clr-tertiary-600);
+  
+}
+.call-to-action::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("IMAGES/Wallpaper.jpg") ;
+  background-position: -15rem -5rem;
+  background-repeat: no-repeat;
+  opacity: 0.5; */
+}
 /* Utility classes */
 .container{
   --max-width: 1110px; 
@@ -352,6 +389,7 @@ body{
 .clr-accent-400{
   color: var(--clr-accent-400);
 }
+
 .margin-block-500{
   margin-top: var(--size-500);
 }
@@ -360,6 +398,9 @@ body{
 } */
 .fs-500{
   font-size: var(--fs-500);
+}
+.clr-tertiary-600{
+  color: var(--clr-tertiary-600);
 }
 .clr-accent-100{
   color: var(--clr-accent-100)
@@ -378,6 +419,9 @@ body{
   font-size: var(--fs-600);
   line-height: 1.2;
 
+}
+.clr-secondary-500{
+  color: var(--clr-secondary-500);
 }
 .fw-bold{
     font-weight: var(--fw-bold);
