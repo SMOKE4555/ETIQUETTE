@@ -258,6 +258,14 @@ article{
   /* box-shadow: 0 0 1em -1em var(--clr-accent-300) ; */
   box-shadow: 0 0 1em  rgba(0, 0, 0, 0.2); 
 }
+@media (max-width: 50em) {
+  .offer-container{
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: auto;
+    
+  }
+}
 .card-image{  
   position: relative;
 }
