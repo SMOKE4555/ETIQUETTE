@@ -530,6 +530,9 @@ footer{
 .margin-block-500{
   margin-top: var(--size-500);
 }
+.margin-block-501{
+  margin-bottom: var(--size-500);
+}
 /* .fs-nav{
   font-size: var(--fs-nav);
 } */
