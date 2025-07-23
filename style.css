@@ -241,6 +241,8 @@ article{
 @media (max-width: 50em) {
   .card-container{
    flex-wrap: wrap;
+   width: 100%;
+   margin: 0;
   }
 }
 .offer-container{
@@ -250,7 +252,6 @@ article{
   max-width: 250px;
   min-height: 400px;
   display: flex;
-  flex-direction: column;
   flex-direction: column;
   border-radius: 10px;
   padding: var(--size-300);
@@ -263,7 +264,8 @@ article{
     flex: 1 1 100%;
     max-width: 100%;
     min-height: auto;
-    
+    margin-bottom: var(--size-400);
+
   }
 }
 .card-image{  
