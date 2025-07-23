@@ -19,8 +19,8 @@
   --clr-icon-g:hsl(240, 95%, 93%);
 
 
-  --font-family-primary:"Roboto Serif", serif ;
-  --font-family-secondary: "Nunito", sans-serif ;
+  --font-family-primary:"Roboto Serif", serif;
+  --font-family-secondary: "Nunito", sans-serif;
   
 
   --font-family-body: var(--font-family-secondary);
@@ -71,12 +71,10 @@
 
 .wrapper-1{
   max-width: 1110px;
-  border: solid red 1px;
   margin-inline: auto;
   
 }   
 .one{
-  
   height: 150px;
   width: 200px;
 } 
@@ -234,6 +232,69 @@ article{
     padding: .5rem;
   }
 }
+
+.card-container{
+  display: flex;
+  gap: var(--size-400);
+  justify-content: center;
+}
+@media (max-width: 50em) {
+  .card-container{
+   flex-wrap: wrap;
+  }
+}
+.offer-container{
+  flex: 1 1  250px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: var(--size-300);
+  overflow: hidden;
+  /* box-shadow: 0 0 1em -1em var(--clr-accent-300) ; */
+  box-shadow: 0 0 1em  rgba(0, 0, 0, 0.2); 
+}
+.card-image{  
+  position: relative;
+}
+.card-image img{
+  width: 100%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body{
+  height: 100%;
+  padding: var(--size-450);  
+  display: flex;
+  flex-direction: column;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+}
+.card-body h3{
+  margin-bottom: var(--size-400);
+}
+.card-body p{
+  flex-grow: 1;
+}
+.readmore-container{
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+.readmore{
+  text-decoration: none;
+  color: var(--clr-accent-400);
+  font-weight: var(--fw-bold);
+}
+.arrow{
+  margin-left: var(--size-200);
+  transition: transform 0.3s ease;
+}
+
 /* button */
 .button{
   display: inline-flex; 
@@ -425,7 +486,7 @@ footer{
   .even-columns{
   display: grid;
   
-  /* gap: 1rem; */
+  gap: .5rem;
 }
 }
 
