@@ -352,7 +352,7 @@ article{
 }
 .last:hover,
 .last:focus-visible{
-   background-color: rgb(125, 53, 53);
+   background-color: rgb(136, 94, 94);
 }
 .button:hover,
 .button:focus-visible{
@@ -470,6 +470,21 @@ footer{
   display: block;
   margin: 20px auto;
 }
+.stars{
+  color: green;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin: 8px 0;
+  display: inline-flex;
+  align-items: center;
+}
+.half-star {
+ width: 0.9rem;
+ overflow: hidden;
+ display: inline-block;
+ vertical-align: text-top;
+}
 
 .shadow-effect {
 		    background: #fff;
@@ -503,7 +518,6 @@ footer{
 		#customers-testimonials .item {
 		    text-align: center;
 		    padding: 50px;
-				margin-bottom:80px;
 		    -webkit-transform: scale3d(0.8, 0.8, 1);
 		    transform: scale3d(0.8, 0.8, 1);
 		    -webkit-transition: all 0.3s ease-in-out;
@@ -566,6 +580,22 @@ footer{
     max-width: 60px;
     margin: 0 auto 12px;
   }
+}
+.testimonial-header{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.testimonial-header img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid plum;
+}
+.header-text{
+  text-align: left;
 }
 
 /* call to action */
