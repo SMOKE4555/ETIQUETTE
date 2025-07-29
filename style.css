@@ -580,6 +580,13 @@ footer{
     max-width: 60px;
     margin: 0 auto 12px;
   }
+  .testimonial-header img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid plum;
+}
 }
 .testimonial-header{
   display: flex;
