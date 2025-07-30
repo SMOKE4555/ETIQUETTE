@@ -1,14 +1,33 @@
-const primaryHeader = document.querySelector(".primaery-header");
+const primaryHeader = document.querySelector(".primary-header");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
+const overlay = document.querySelector(".overlay");
 
-navToggle.addEventListener('click', () => {
-    primaryNav.hasAttribute('data-visible') 
-    ? navToggle.setAttribute("aria-expanded", false)
-    : navToggle.setAttribute("aria-expanded", true);
-    primaryNav.toggleAttribute('data-visible');
-    primaryHeader.toggleAttribute('data-overlay');
+navToggle.addEventListener("click", () => {
+  const isVisible = primaryNav.hasAttribute("data-visible");
+
+  navToggle.setAttribute("aria-expanded", !isVisible);
+  primaryNav.toggleAttribute("data-visible");
+
+  // Toggle overlay visibility
+  overlay.classList.toggle("hidden");
 });
+
+
+
+
+
+// const primaryHeader = document.querySelector(".primaery-header");
+// const navToggle = document.querySelector(".mobile-nav-toggle");
+// const primaryNav = document.querySelector(".primary-navigation");
+
+// navToggle.addEventListener('click', () => {
+//     primaryNav.hasAttribute('data-visible') 
+//     ? navToggle.setAttribute("aria-expanded", false)
+//     : navToggle.setAttribute("aria-expanded", true);
+//     primaryNav.toggleAttribute('data-visible');
+//     primaryHeader.toggleAttribute('data-overlay');
+// });
 
 
 const offers = document.querySelectorAll('.offer-container');
@@ -56,4 +75,28 @@ jQuery(document).ready(function($) {
   });
 });
 
+
+
+
+  const quotes = [
+    "Let's lead the way.",
+    "Let's make today so awesome that yesterday gets jealous.",
+    "Your only limit is your mind.",
+    "Small steps every day lead to big results.",
+    "You don’t have to be perfect to start.",
+    "Stay hungry, stay foolish. – Steve Jobs",
+    "Discipline is the bridge between goals and accomplishment.",
+    "Do something today your future self will thank you for."
+  ];
+
+  // Pick a random quote
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const quoteContainer = document.querySelector("#quote-text");
+    if (quoteContainer) {
+      quoteContainer.textContent = randomQuote;
+      quoteContainer.classList.add("fade-in");
+    }
+  });
 

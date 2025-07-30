@@ -234,6 +234,46 @@ article{
     padding: .5rem;
   }
 }
+.feature-layout{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--size-450);
+  align-items: start;
+}
+.motivation-block {
+  padding: 1.5rem;
+  background-color: #f0f8ff; /* soft background */
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin-inline: auto;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Already shared fade animation */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 50em) {
+  .feature-layout{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+     display: flex;
+    flex-direction: column-reverse;
+  }
+}
 
 .card-container{
   display: flex;
@@ -390,7 +430,7 @@ article{
 @media (max-width: 50em) {
   .primary-navigation{
     display: none;
-
+    z-index: 1100;
     position: fixed;
     padding: var(--size-700);
     inset:  7em var(--size-900) auto;
@@ -402,16 +442,21 @@ article{
     
   
   }
-  .primary-header[data-overlay]::before {
-  content: "";
+  .overlay {
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 1));
+  background-color: rgba(0, 0, 0, 0.8); /* or use a gradient if you want */
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
 
- } 
-
-  
-  .nav-list{
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-list{
     display: grid;
     gap: var(--size-600);
     text-align: center;
