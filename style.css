@@ -427,11 +427,18 @@ article{
   .nav-list a:focus{
   color: var(--clr-accent-300);
   }
+.mobile-nav-toggle{
+  display: none;
+}
+
 @media (max-width: 50em) {
   .primary-navigation{
     display: none;
-    z-index: 1100;
+    z-index: 1101;
     position: fixed;
+    top: 20%;
+    left: 50%;
+
     padding: var(--size-700);
     inset:  7em var(--size-900) auto;
     max-width: 25rem;
@@ -442,20 +449,7 @@ article{
     
   
   }
-  .overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* or use a gradient if you want */
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-}
 
-.overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
 .nav-list{
     display: grid;
     gap: var(--size-600);
@@ -468,21 +462,44 @@ article{
     display: block;
   }
   .mobile-nav-toggle {
-    display: block;
-    position: fixed;
+    display: inline-block;
+    position: relative;
     top: var(--size-600);
     right: var(--size-400);
     cursor: pointer;
+    z-index: 1002;
     background: transparent;
     border:0;
     padding: 0.5rem;
   
 }
-.mobile-nav-toggle .icon-close{
+.mobile-nav-toggle[aria-expanded="true"] .icon-close{
+  display: inline;
+}
+.mobile-nav-toggle[aria-expanded="true"] .icon-humburger {
   display: none;
 }
+.icon-close{
+  display: none;
+}
+.menu-overlay {
+  inset: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1100;
+  display: none; /* Hidden by default */
+}
+.menu-overlay.active {
+  display: block;
+}
+body.menu-open > *:not(.menu-overlay) :not(nav) :not(.mobile-nav-toggle) {
+  display: none;
+}
+body.menu-open{
+  overflow: hidden;
 }
 
+}
 /* footer-navigation */
 footer{
   background-color: var(--clr-secondary-500);
@@ -673,6 +690,84 @@ footer{
   z-index: -1;
   
 }
+/* communication part */
+
+.aside{
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: flex-start;
+}
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .square-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: grid;
+            margin-bottom: 1rem;
+            
+        }
+        
+        .cards-image {
+            height: 120px;
+            
+        }
+        
+        .card-content {
+            padding: 16px;
+            
+            
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .content-type {
+            font-size: 12px;
+            font-weight: 600;
+            color: #4f46e5;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .duration {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .card-actions {
+            margin-top: auto;
+            color: #4f46e5;
+            font-weight: 600;
+            font-size: 14px;
+        }
+  
+                 
+
 
 /* Utility classes */
 .container{

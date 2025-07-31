@@ -1,21 +1,29 @@
-const primaryHeader = document.querySelector(".primary-header");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
-const overlay = document.querySelector(".overlay");
+const overlay = document.getElementById("menu-overlay");
 
 navToggle.addEventListener("click", () => {
   const isVisible = primaryNav.hasAttribute("data-visible");
 
-  navToggle.setAttribute("aria-expanded", !isVisible);
-  primaryNav.toggleAttribute("data-visible");
-
-  // Toggle overlay visibility
-  overlay.classList.toggle("hidden");
+  if (isVisible) {
+    primaryNav.removeAttribute("data-visible");
+    overlay.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  } else {
+    primaryNav.setAttribute("data-visible", "");
+    overlay.classList.add("active");
+    navToggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+  }
 });
 
-
-
-
+// // Optional: clicking outside nav also closes the menu
+// overlay.addEventListener("click", () => {
+//   primaryNav.removeAttribute("data-visible");
+//   overlay.classList.remove("active");
+//   navToggle.setAttribute("aria-expanded", "false");
+// });
 
 // const primaryHeader = document.querySelector(".primaery-header");
 // const navToggle = document.querySelector(".mobile-nav-toggle");
