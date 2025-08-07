@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <form id="resume-form">
+      <div class="progress-bar">
+        <div class="progress-step active" data-step="1">Contact</div>
+        <div class="progress-step" data-step="2">Experience</div>
+        <div class="progress-step" data-step="3">Education</div>
+        <div class="progress-step" data-step="4">Skills</div>
+        <div class="progress-step" data-step="5">Summary</div>
+        <div class="progress-step" data-step="6">Finalize</div>
+      </div>
+
+      <!-- Step 1: Contact -->
+      <div class="step active" data-step="1">
+        <h2>Contacts</h2>
+        <input type="text" id="firstName" placeholder="First Name" oninput="updatePreview()" />
+        <input type="text" id="lastName" placeholder="Last Name" oninput="updatePreview()" />
+        <input type="email" id="email" placeholder="Email" oninput="updatePreview()" />
+        <input type="tel" id="phone" placeholder="Phone" oninput="updatePreview()" />
+        <input type="text" id="jobTitle" placeholder="Desired Job Title" oninput="updatePreview()" />
+        <button type="button" onclick="nextStep()" class="next-button">Next</button>
+      </div>
+
+      <!-- Step 2: Experience -->
+      <div class="step" data-step="2">
+        <h2>Experience</h2>
+        <input type="text" id="expTitle" placeholder="Job Title" oninput="updatePreview()" />
+        <input type="text" id="employer" placeholder="Employer" oninput="updatePreview()" />
+        <input type="text" id="expLocation" placeholder="Location" oninput="updatePreview()" />
+        <input type="text" id="startDate" placeholder="Start Date" oninput="updatePreview()" />
+        <input type="text" id="endDate" placeholder="End Date" oninput="updatePreview()" />
+        <textarea id="expDescription" placeholder="Job Description" oninput="updatePreview()"></textarea>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()" class="next-button">Next</button>
+      </div>
+
+      <!-- Step 3: Education -->
+      <div class="step" data-step="3">
+        <h2>Education</h2>
+        <input type="text" id="education" placeholder="Education Info" oninput="updatePreview()" />
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()" class="next-button">Next</button>
+      </div>
+
+      <!-- Step 4: Skills -->
+      <div class="step" data-step="4">
+        <h2>Skills</h2>
+        <textarea id="skills" placeholder="List your skills" oninput="updatePreview()"></textarea>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()" class="next-button">Next</button>
+      </div>
+
+      <!-- Step 5: Summary -->
+      <div class="step" data-step="5">
+        <h2>Summary</h2>
+        <textarea id="summary" placeholder="Professional summary" oninput="updatePreview()"></textarea>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()" class="next-button">Next</button>
+      </div>
+
+      <!-- Step 6: Final -->
+      <div class="step" data-step="6">
+        <h2>Finalize</h2>
+        <p>Preview your resume on the right and click below to finish.</p>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="preview" id="resume-preview">
+      <div class="resume-card">
+        <div class="sidebar">
+          <h1 id="preview-name">Your Name</h1>
+          <p id="preview-title">Job Title</p>
+        </div>
+        <div class="resume-details">
+          <p id="preview-contact">Email | Phone</p>
+          <h3>Experience</h3>
+          <p><strong id="preview-expTitle">Job Title</strong> at <span id="preview-employer">Employer</span></p>
+          <p id="preview-expDate">Start - End</p>
+          <p id="preview-expDescription">Description</p>
+          <h3>Education</h3>
+          <p id="preview-education">Education Info</p>
+          <h3>Skills</h3>
+          <p id="preview-skills">Skills</p>
+          <h3>Summary</h3>
+          <p id="preview-summary">Your summary will appear here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="etiquette.js"></script>
+</body>
+</html>

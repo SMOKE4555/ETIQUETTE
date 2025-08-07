@@ -18,26 +18,6 @@ navToggle.addEventListener("click", () => {
   }
 });
 
-// // Optional: clicking outside nav also closes the menu
-// overlay.addEventListener("click", () => {
-//   primaryNav.removeAttribute("data-visible");
-//   overlay.classList.remove("active");
-//   navToggle.setAttribute("aria-expanded", "false");
-// });
-
-// const primaryHeader = document.querySelector(".primaery-header");
-// const navToggle = document.querySelector(".mobile-nav-toggle");
-// const primaryNav = document.querySelector(".primary-navigation");
-
-// navToggle.addEventListener('click', () => {
-//     primaryNav.hasAttribute('data-visible') 
-//     ? navToggle.setAttribute("aria-expanded", false)
-//     : navToggle.setAttribute("aria-expanded", true);
-//     primaryNav.toggleAttribute('data-visible');
-//     primaryHeader.toggleAttribute('data-overlay');
-// });
-
-
 const offers = document.querySelectorAll('.offer-container');
 
 offers.forEach(offer => {
@@ -107,4 +87,3 @@ jQuery(document).ready(function($) {
       quoteContainer.classList.add("fade-in");
     }
   });
-

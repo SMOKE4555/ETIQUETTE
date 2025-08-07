@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      background-color: #f0f0f0;
+      padding: 40px;
+    }
+
+    .resume {
+      display: flex;
+      width: 100%;
+      max-width: 960px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .sidebar {
+      width: 30%;
+      background-color: #4B0082;
+      color: #fff;
+      padding: 30px 20px;
+    }
+
+    .sidebar h3 {
+      border-bottom: 1px solid #ccc;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .main-content {
+      width: 70%;
+      padding: 30px;
+      color: #333;
+    }
+
+    .main-content h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      color: #6A0DAD;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .job, .education, .certification {
+      margin-bottom: 20px;
+    }
+
+    .job-title, .degree, .cert-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .job-meta, .cert-meta {
+      font-size: 13px;
+      color: #6A0DAD;
+      margin-bottom: 5px;
+    }
+
+    .job-description ul {
+      padding-left: 18px;
+    }
+
+    .job-description ul li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <div class="sidebar">
+      <h3>Personal details</h3>
+      <ul>
+        <li>📧 kjohnson@example.com</li>
+        <li>📞 (345) 123-4567</li>
+        <li>📍 Portland, OR</li>
+      </ul>
+
+      <h3>Hard Skills</h3>
+      <ul>
+        <li>Type 75+ WPM</li>
+        <li>Microsoft Office</li>
+        <li>Google Workspace</li>
+        <li>Intuit Quickbooks</li>
+        <li>Scheduling</li>
+        <li>Office Management</li>
+        <li>Event Coordination</li>
+      </ul>
+
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Organization</li>
+        <li>Customer Service</li>
+        <li>Time Management</li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1>Kayla Johnson</h1>
+
+      <div class="section">
+        <div class="section-title">Summary</div>
+        <p>
+          Certified Administrative Professional with 6+ years of experience as an administrative assistant in the financial and investment industry. Seeking to leverage stellar organizational skills and extensive experience to join the Portland Financial team as a senior administrative assistant.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+        
+        <div class="job">
+          <div class="job-title">Administrative Assistant</div>
+          <div class="job-meta">Mammoth Investing, Portland, OR | Mar 2018 - Present</div>
+          <div class="job-description">
+            <ul>
+              <li>Provide administrative support for 8 senior executives</li>
+              <li>Manage individual and office schedules, coordinating meetings, events, and conferences</li>
+              <li>Trusted with $500,000 annual budget to make all travel arrangements for senior executives</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Administrative Assistant</div>
+          <div class="job-meta">Bend Investment Partners, Bend, OR | Jun 2015 - Mar 2018</div>
+          <div class="job-description">
+            <ul>
+              <li>Greeted and directed all visitors, increasing satisfaction rating by 30%</li>
+              <li>Answered all incoming calls</li>
+              <li>Verified and processed 40+ new client applications each week</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education">
+          <div class="degree">Bachelor of Science in Business Administration</div>
+          <div class="job-meta">University of Oregon, Eugene, OR | 2011 - 2015</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="certification">
+          <div class="cert-title">CPR/AED</div>
+          <div class="cert-meta">American Red Cross | Jan 2022</div>
+        </div>
+        <div class="certification">
+          <div class="cert-title">Certificate: Personal Assistant Specialist (CPAS)</div>
+          <div class="cert-meta">CPAS Certifications | May 2016</div>
+        </div>
+        <div class="certification">
+          <div class="cert-title">Certified Administrative Professional</div>
+          <div class="cert-meta">Administrative Professional Institute | Jul 2013</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

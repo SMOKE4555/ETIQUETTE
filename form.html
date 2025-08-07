@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="containers">
+     <div>
+      <div class="scroll-bars">
+        <div class="form-scroll-area">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">Contact</div>
+                    <div class="progress-step" data-step="2">Experience</div>
+                    <div class="progress-step" data-step="3">Education</div>
+                    <div class="progress-step" data-step="4">Skills</div>
+                    <div class="progress-step" data-step="5">Summary</div>
+                    <div class="progress-step" data-step="6">Finalize</div>
+                </div>
+         
+                <form id="resume-form">
+                      <!-- Step 1: Contact -->
+                      
+                            
+                            <div class="step active " data-step="1">
+                              <h1  class="fs-200 fw-bold font-family-primary clr-primary-400">Contacts</h1>
+
+
+                              <div class="forms forms-1">
+                                <div>
+                                  <label>First name</label>
+                                  <input type="text" id="firstName" placeholder="Kunihira" oninput="updatePreview()"/>
+                                </div>
+                                <div>
+                                  <label>Last name</label>
+                                  <input type="text" id="lastName" placeholder="Albert" oninput="updatePreview()"/>
+                                </div>
+                                <div> 
+                                  <label>Email</label>
+                                  <input type="email" id="email" placeholder="kjohnson@example.com" oninput="updatePreview()" />
+                                </div>
+                                <div>
+                                  <label>Phone</label>
+                                  <span class="input-group-text" id="basic-addon1">+256</span>
+                                  <input type="tel" id="phone" placeholder="0769243147" oninput="updatePreview()" />
+                                </div>
+                                <div class="desired">
+                                  <label>Desired job title</label>
+                                  <input type="text" id="jobTitle" placeholder="Accountant" oninput="updatePreview()" />
+                                  </div>
+                              </div>
+                          
+                              
+                            </div>
+                        
+                      <!-- Step 2: Experience -->
+                      
+                      <div class="step" data-step="2">
+                        <h2  class="fs-200 fw-bold font-family-primary clr-primary-400">Experience</h2>
+                        <p>List your experience starting with the most recent position first.</p>
+                        <div class="forms forms-2"> 
+                              <div class="job">
+                              <label>Job title</label>
+                            <input type="text" id="expTitle" placeholder="Junior Accountant" oninput="updatePreview()" />
+                              </div>
+                              <div class="employ">
+                                    <label>Employer</label>
+                                    <input type="text" id="employer" placeholder="Company name" oninput="updatePreview()" />
+                              </div>
+                              <div class="locate">
+                                      <label>Location</label>
+                                      <input type="text" id="expLocation" placeholder="Kampala,Uganda" oninput="updatePreview()" />
+                              </div>
+                              <div class="start">
+                                    <label>Start date</label>
+                                    <input type="text" id="startDate" placeholder="MM/YYYY" oninput="updatePreview()" />
+                                </div>
+                                <div class="end">
+                                      <label>End date</label>
+                                      <input type="text" id="endDate" placeholder="MM/YYYY" oninput="updatePreview()" />
+                                </div>
+                                <div class="description">
+                                                  <label>Description</label>
+                                                  <textarea id="expDescription" placeholder="•Helped with monthly finacial reports and data entry
+                                      •Watched over team budgets and reported issues
+                                      •Entered 150+ invoices weekly using accounting software" oninput="updatePreview()"></textarea>
+                                  </div>
+                                  
+                        </div>
+                        
+                        
+                      </div>
+
+                      <!-- Step 3: Education -->
+                      <div class="step" data-step="3">
+                        <h2  class="fs-200 fw-bold font-family-primary clr-primary-400">Education</h2>
+                        <p>Add your education details - even if you haven't graduated yet.</p>
+                            <div class="forms forms-2">
+                              <div class="job">
+                                  <label>School name</label>
+                                  <input type="text" id="school-name" placeholder="Makerere University">
+                              </div>
+                               <div class="employ">                           
+                                  <label>Location</label>
+                                  <input type="text" id="school-location" placeholder="Kampala">
+                               </div> 
+                                <div class="locate">               
+                                  <label >Degree</label>
+                                  <input type="text" id="degree" placeholder="BA in Finance and Banking">
+                                </div> 
+                                <div>     
+                                  <label>Start date</label>
+                                  <input type="text" id="start-date" placeholder="MM/YYYY">
+                                </div>
+                                <div>                   
+                                  <label>End date</label>
+                                  <input type="text" id="end-date" placeholder="MM/YYYY">
+                                </div> 
+                                <div class="description">   
+                                      <label>Description</label>
+                                      <textarea id="eddescription" placeholder="e.g.,Graduated with honors, Dean's List (2022)"></textarea>
+                                </div>         
+                            </div>    
+                        
+                      </div>
+
+                      <!-- Step 4: Skills -->
+                      <div class="step" data-step="4">
+                        <h2  class="fs-200 fw-bold font-family-primary clr-primary-400">Skills</h2>
+                        <p>Add your most relevant professional skills.</p>
+                        <div>
+                                        <!-- HARD SKILLS SECTION -->
+                              <div class="skills-section">
+  <h3>Hard Skills</h3>
+  <div id="hard-skills-container"></div>
+  <button type="button" onclick="addHardSkill()" id="add-hard-skill-btn">Add Hard Skill</button>
+
+  <h3>Soft Skills</h3>
+  <div id="soft-skills-container"></div>
+  <button type="button" onclick="addSoftSkill()" id="add-soft-skill-btn">Add Soft Skill</button>
+</div>
+                        </div>
+                        
+                      </div>
+
+                      <!-- Step 5: Summary -->
+                      <div class="step" data-step="5">
+                        <h2  class="fs-200 fw-bold font-family-primary clr-primary-400">Summary</h2>
+                        <p>Write a short introduction that highlights your experience, key skills, and career goals.</p>
+                        <div class="forms">
+                        <textarea id="summary" placeholder="Professional summary" oninput="updatePreview()"></textarea>
+                        </div>
+                        
+                      </div>
+
+                      <!-- Step 6: Final -->
+                      <div class="step" data-step="6">
+                        <h2  class="fs-200 fw-bold font-family-primary clr-primary-400">Finalize</h2>
+                        <p>Preview your resume on the right and click below to finish.</p>
+                        
+                      </div>
+                    </form>
+          </div>
+                <div class="form-buttons">
+                  <button type="button" onclick="prevStep()" class=" bg-clr-accent button | display-sm-none display-md-inline-flex" id="back-btn">Back</button>
+                  <button type="button" onclick="nextStep()" class=" bg-clr-accent button | display-sm-none display-md-inline-flex" id="next-btn">Next</button>        
+                  <button type="submit" class=" bg-clr-accent button | display-sm-none display-md-inline-flex" id="submit-btn">Submit</button>
+                  <!-- <button type="button" id="next-btn" onclick="nextStep()" class="step.active bg-clr-accent button | display-sm-none display-md-inline-flex" data-step="1">Next Experience</button>       -->
+                </div>
+        </div>
+    </div>
+
+    <div class="preview scroll-bar" id="resume-preview">
+       
+  <div class="resume">
+    <div class="sidebar">
+      <h3>Personal details</h3>
+      <ul>
+        <li>📧 <span id="preview-email">kjohnson@example.com</span></li>
+        <li>📞 <span id="preview-contact">(345) 123-4567</span></li>
+        <li>📍 Portland, OR</li>
+      </ul>
+
+
+      <!-- PREVIEW -->
+<div id="skills-preview">
+  <h3>Skills Preview</h3>
+
+  <div id="hard-skills-preview">
+    <h4>Hard Skills</h4>
+  </div>
+  <div id="soft-skills-preview">
+    <h4>Soft Skills</h4>
+  </div>
+</div>
+     
+
+    </div>
+
+    <div class="main-content">
+      <h1 id="preview-name">Kayla Johnson</h1>
+      <h2 id="preview-title">LAWYER</h2>
+
+      <div class="section">
+        <div class="section-title">Summary</div>
+        <p>
+          Certified Administrative Professional with 6+ years of experience as an administrative assistant in the financial and investment industry. Seeking to leverage stellar organizational skills and extensive experience to join the Portland Financial team as a senior administrative assistant.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+        
+        <div class="job">
+          <div id="preview-expDate">Apr 2025 - Nov 2025</div>
+          <div class="preview-expTitle" id="preview-expTitle">Administrative Assistant</div>
+          <div class="job-meta" id="preview-employer">Mammoth Investing, Gulu</div>
+          <div class="job-description" id="preview-expDescription">
+            <ul>
+              <li>Provide administrative support for 8 senior executives</li>
+              <li>Manage individual and office schedules, coordinating meetings, events, and conferences</li>
+              <li>Trusted with $500,000 annual budget to make all travel arrangements for senior executives</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div id="preview-expDate1">Apr 2025 - Nov 2025</div>
+          <div class="job-title" id="preview-expTitle1">Administrative Assistant</div>
+          <div class="job-meta">Bend Investment Partners, Jun 2015 - Mar 2018</div>
+          <div class="job-description" id="preview-expDescription1">
+            <ul>
+              <li>Greeted and directed all visitors, increasing satisfaction rating by 30%</li>
+              <li>Answered all incoming calls</li>
+              <li>Verified and processed 40+ new client applications each week</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education">
+          <div class="degree">Bachelor of Science in Business Administration</div>
+          <div class="job-meta">University of Oregon, Eugene, OR | 2011 - 2015</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="certification">
+          <div class="cert-title">CPR/AED</div>
+          <div class="cert-meta">American Red Cross | Jan 2022</div>
+        </div>
+        <div class="certification">
+          <div class="cert-title">Certificate: Personal Assistant Specialist (CPAS)</div>
+          <div class="cert-meta">CPAS Certifications | May 2016</div>
+        </div>
+        <div class="certification">
+          <div class="cert-title">Certified Administrative Professional</div>
+          <div class="cert-meta">Administrative Professional Institute | Jul 2013</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+
+
+  <script>
+    
+  let currentStep = 1;
+  const totalSteps = 6;
+
+  function showStep(step) {
+    // Hide all steps
+    document.querySelectorAll('.step').forEach(stepDiv => {
+      stepDiv.classList.remove('active');
+    });
+
+    // Show the current step
+    const current = document.querySelector(`.step[data-step="${step}"]`);
+    if (current) current.classList.add('active');
+
+    // Update progress bar
+    document.querySelectorAll('.progress-step').forEach(p => {
+      const stepNum = parseInt(p.getAttribute('data-step'));
+      p.classList.remove('active');
+      if (stepNum === step) {
+        p.classList.add('active');
+      }
+    });
+
+    // Update button visibility
+    updateButtonVisibility(step);
+  }
+
+  function updateButtonVisibility(step) {
+    const backBtn = document.getElementById('back-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (step === 1) {
+      backBtn.style.display = 'none';
+      nextBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'none';
+    } else if (step === totalSteps) {
+      backBtn.style.display = 'inline-block';
+      nextBtn.style.display = 'none';
+      submitBtn.style.display = 'inline-block';
+    } else {
+      backBtn.style.display = 'inline-block';
+      nextBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'none';
+    }
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  function get(id) {
+    return document.getElementById(id)?.value || '';
+  }
+
+  function updatePreview() {
+    document.getElementById("preview-name").textContent = `${get("firstName")} ${get("lastName")}`;
+    document.getElementById("preview-title").textContent = get("jobTitle");
+    document.getElementById("preview-contact").textContent = get("phone");
+    document.getElementById("preview-email").textContent = get("email");
+    document.getElementById("preview-expTitle").textContent = get("expTitle");
+    document.getElementById("preview-expDate").textContent = `${get("startDate")} - ${get("endDate")}`;
+    document.getElementById("preview-employer").textContent = `${get("employer")} , ${get("expLocation")}`;
+    document.getElementById("preview-expDescription").textContent = get("expDescription");
+    
+
+  const expDesc = get("expDescription");
+  const formattedDesc = expDesc
+    .split('\n')
+    .map(line => `<p>${line.trim()}</p>`)
+    .join('');
+    document.getElementById("preview-expDescription").innerHTML = formattedDesc;
+    // These elements do NOT exist in your preview, so these lines are removed:
+    // document.getElementById("preview-education").textContent = get("education");
+    // document.getElementById("preview-skills").textContent = get("skills");
+    // document.getElementById("preview-summary").textContent = get("summary");
+  }
+ 
+    
+  document.getElementById("resume-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Resume completed!");
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showStep(currentStep);
+  });
+
+  let hardSkillCount = 0;
+let softSkillCount = 0;
+
+const hardSkillsContainer = document.getElementById("hard-skills-container");
+const softSkillsContainer = document.getElementById("soft-skills-container");
+
+document.getElementById("add-hard-skill-btn").addEventListener("click", () => {
+  hardSkillCount++;
+
+  const group = document.createElement("div");
+  group.className = "hard-skill"; // match the class used for initial skill
+  group.innerHTML = `
+    <input type="text" id="hard-skill${hardSkillCount}" placeholder="e.g. JavaScript" class="hard-skil-name">
+    <input type="range" id="hard-skill${hardSkillCount}-level" min="0" max="100" value="70" class="hard-skil-range">
+    <button type="button" class="remove-hard-skill"><img src="IMAGES/trash.svg" alt=""></button>
+  `;
+
+  hardSkillsContainer.appendChild(group);
+
+  // Add event listeners
+  document.getElementById(`hard-skill${hardSkillCount}`).addEventListener("input", updateSkillsPreview);
+  document.getElementById(`hard-skill${hardSkillCount}-level`).addEventListener("input", updateSkillsPreview);
+
+  updateSkillsPreview();
+});
+
+document.getElementById("add-soft-skill-btn").addEventListener("click", () => {
+  softSkillCount++;
+
+  const group = document.createElement("div");
+  group.className = "skill-input-group";
+  group.innerHTML = `
+    <input type="text" id="soft-skill${softSkillCount}" placeholder="e.g. Teamwork">
+    <button type="button" class="remove-soft-skill"><img src="IMAGES/trash.svg" alt=""></button>
+  `;
+
+  softSkillsContainer.appendChild(group);
+
+  document.getElementById(`soft-skill${softSkillCount}`).addEventListener("input", updateSkillsPreview);
+
+  updateSkillsPreview();
+});
+
+
+// document.getElementById("add-soft-skill-btn").addEventListener("click", () => {
+//   softSkillCount++;
+
+//   const group = document.createElement("div");
+//   group.className = "skill-input-group";
+//   group.innerHTML = `
+//     <input type="text" id="soft-skill${softSkillCount}" placeholder="e.g. Teamwork">
+//   `;
+
+//   softSkillsContainer.appendChild(group);
+
+//   document.getElementById(`soft-skill${softSkillCount}`).addEventListener("input", updateSkillsPreview);
+
+//   updateSkillsPreview();
+// });
+
+// Delegate click events for removing skills
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".remove-hard-skill")) {
+    const skillGroup = e.target.closest(".hard-skill");
+    if (skillGroup) {
+      skillGroup.remove();
+      updateSkillsPreview();
+    }
+  }
+
+  if (e.target.closest(".remove-soft-skill")) {
+    const skillGroup = e.target.closest(".skill-input-group");
+    if (skillGroup) {
+      skillGroup.remove();
+      updateSkillsPreview();
+    }
+  }
+});
+
+function updateSkillsPreview() {
+  // Hard Skills Preview
+  const hardPreview = document.getElementById("hard-skills-preview");
+  hardPreview.innerHTML = "<h4>Hard Skills</h4>";
+
+  for (let i = 1; i <= hardSkillCount; i++) {
+    const nameInput = document.getElementById(`hard-skill${i}`);
+    const levelInput = document.getElementById(`hard-skill${i}-level`);
+
+    if (nameInput && levelInput && nameInput.value.trim() !== "") {
+      hardPreview.innerHTML += `
+        <div class="skill-bar">
+          <div class="skill-name">${nameInput.value}</div>
+          <div class="bar">
+            <div class="fill" style="width: ${levelInput.value}%"></div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // Soft Skills Preview
+  const softPreview = document.getElementById("soft-skills-preview");
+  softPreview.innerHTML = "<h4>Soft Skills</h4><ul>";
+
+  for (let i = 1; i <= softSkillCount; i++) {
+    const skillInput = document.getElementById(`soft-skill${i}`);
+    if (skillInput && skillInput.value.trim() !== "") {
+      softPreview.innerHTML += `<li>${skillInput.value}</li>`;
+    }
+  }
+
+  softPreview.innerHTML += "</ul>";
+}
+
+</script>
+
+</body>
+</html>
+
+
