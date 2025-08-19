@@ -1,3 +1,114 @@
+// education.js
+
+// Get references to container and preview list
+const educationFormsContainer = document.getElementById("education-forms-container");
+
+// We'll add a <ul> inside the preview section with id "education-preview-list" for this script to update
+// Make sure to add this <ul id="education-preview-list"></ul> inside your preview Education section
+
+const educationPreviewList = document.getElementById("education-preview-list");
+
+// Function to create a new education form block with remove button and input listeners
+function createEducationForm(id) {
+  const container = document.createElement("div");
+  container.className = "education-entry";
+  container.dataset.id = id;
+
+  container.innerHTML = `
+    <div class="forms forms-2">
+      <div class="job">
+        <label>School name</label>
+        <input type="text" class="school-name" placeholder="Makerere University" />
+      </div>
+      <div class="employ">
+        <label>Location</label>
+        <input type="text" class="school-location" placeholder="Kampala" />
+      </div> 
+      <div class="locate">
+        <label>Degree</label>
+        <input type="text" class="degree" placeholder="BA in Finance and Banking" />
+      </div> 
+      <div>
+        <label>Start date</label>
+        <input type="text" class="start-date" placeholder="MM/YYYY" />
+      </div>
+      <div>
+        <label>End date</label>
+        <input type="text" class="end-date" placeholder="MM/YYYY" />
+      </div> 
+      <div class="description">
+        <label>Description</label>
+        <textarea class="eddescription" placeholder="e.g., Graduated with honors, Dean's List (2022)"></textarea>
+      </div>
+      <button type="button" class="remove-education-btn">Remove</button>
+      
+    </div>
+  `;
+
+  // Add input event listeners to update preview on change
+  container.querySelectorAll("input, textarea").forEach(input => {
+    input.addEventListener("input", updateEducationFromForms);
+  });
+
+  // Remove button event
+  container.querySelector(".remove-education-btn").addEventListener("click", () => {
+    container.remove();
+    updateEducationFromForms();
+  });
+
+  return container;
+}
+
+// Add education button event listener
+document.getElementById("add-education-btn").addEventListener("click", () => {
+  const newId = Date.now(); // unique id
+  const newForm = createEducationForm(newId);
+  educationFormsContainer.appendChild(newForm);
+});
+
+// Function to update the education preview section from all forms
+function updateEducationFromForms() {
+  const educationEntries = educationFormsContainer.querySelectorAll(".education-entry");
+
+  if (!educationPreviewList) return;
+
+  if (educationEntries.length === 0) {
+    educationPreviewList.innerHTML = "<li>No education added yet.</li>";
+    return;
+  }
+
+  educationPreviewList.innerHTML = "";
+
+  educationEntries.forEach(entry => {
+    const schoolName = entry.querySelector(".school-name").value.trim();
+    const location = entry.querySelector(".school-location").value.trim();
+    const degree = entry.querySelector(".degree").value.trim();
+    const startDate = entry.querySelector(".start-date").value.trim();
+    const endDate = entry.querySelector(".end-date").value.trim();
+    const description = entry.querySelector(".eddescription").value.trim();
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${schoolName || "School Name"}</strong> - ${location || "Location"}<br/>
+      <em>${degree || "Degree"}</em><br/>
+      <span>${startDate || "Start Date"} - ${endDate || "End Date"}</span>
+      <p>${description || ""}</p>
+    `;
+
+    educationPreviewList.appendChild(li);
+  });
+}
+
+// Initial setup on page load: add one empty education form and update preview
+document.addEventListener('DOMContentLoaded', () => {
+  // If container empty, add one form
+  if (educationFormsContainer && educationFormsContainer.children.length === 0) {
+    document.getElementById("add-education-btn").click();
+  }
+  updateEducationFromForms();
+});
+
+
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 const overlay = document.getElementById("menu-overlay");
