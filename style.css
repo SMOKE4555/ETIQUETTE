@@ -200,6 +200,7 @@ svg {
   padding: var(--fs-500);
   background-color:burlywood;
 }
+
 .ends{
   
   border: 2px solid hsl(90, 100%, 59%);
@@ -258,6 +259,19 @@ svg {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+@media(max-width: 50em){
+  .free-trial{
+    display: flex;
+    flex-direction: column;
+  }
+  .side-content{
+    display: flex;
+    flex-direction: column;
+  }
+  .side-content{
+    padding: var(--clr-accent-900);
+  }
 }
 .content p{
   margin-bottom: 16px;
