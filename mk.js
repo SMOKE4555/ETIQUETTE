@@ -1,14 +1,20 @@
 const container = document.querySelector('.one-layout');
+const card = document.querySelector('.square-card');
+const cardWidth = card ? card.offsetWidth + 16 : 260; // 16px = gap
+
 document.querySelector('.next').addEventListener('click', () => {
-  container.scrollBy({ left: 260, behavior: 'smooth' });
+  container.scrollBy({ left: cardWidth * 3, behavior: 'smooth' }); 
+  // scrolls 3 cards at a time
 });
+
 document.querySelector('.prev').addEventListener('click', () => {
-  container.scrollBy({ left: -260, behavior: 'smooth' });
+  container.scrollBy({ left: -cardWidth * 3, behavior: 'smooth' });
 });
 // experince.js
 
 // Get references to container and preview list
 const experienceFormsContainer = document.getElementById("experience-forms-container");
+
 
 // We'll add a <ul> inside the preview section with id "experience-preview-list" for this script to update
 // Make sure to add this <ul id="experience-preview-list"></ul> inside your preview experience section

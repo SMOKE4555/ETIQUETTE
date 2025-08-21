@@ -829,6 +829,7 @@ footer{
     align-items: center;
     position: relative;
     max-width: 800px;
+    overflow: hidden;
     margin: auto;
   }
   .one-layout{
@@ -838,17 +839,41 @@ footer{
     gap: 1rem;
     padding: 1rem;
     scrollbar-width: none;
+    -ms-overflow-style: none;
 
   }
   .one-layout::-webkit-scrollbar{
     display: none;
   }
+  .square-card{
+    flex: 0 0 250px;
+
+  }
   .second-carousel button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
     display: block;
     cursor: pointer;
     border: none;
     background-color: none;
+    padding: 0.5rem;
     font-size: 2rem;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .second-carousel .prev {
+    left: 10px;
+  }
+  .second-carousel .next {
+    right: 10px;
+  }
+  .aside{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: center;
   }
 }
        
