@@ -812,15 +812,46 @@ footer{
   max-width: 100%;
   
 }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+.one-layout{
+         display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
             padding-right: 20px;
-        }
+} 
+.second-carousel button{
+  display: none;
+} 
+@media(max-width: 50em){
+  .second-carousel{
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+  }
+  .one-layout{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem;
+    scrollbar-width: none;
+
+  }
+  .one-layout::-webkit-scrollbar{
+    display: none;
+  }
+  .second-carousel button{
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: none;
+    font-size: 2rem;
+  }
+}
+       
         
         .square-card {
   background: white;

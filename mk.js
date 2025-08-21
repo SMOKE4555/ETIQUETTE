@@ -1,3 +1,10 @@
+const container = document.querySelector('.one-layout');
+document.querySelector('.next').addEventListener('click', () => {
+  container.scrollBy({ left: 260, behavior: 'smooth' });
+});
+document.querySelector('.prev').addEventListener('click', () => {
+  container.scrollBy({ left: -260, behavior: 'smooth' });
+});
 // experince.js
 
 // Get references to container and preview list
@@ -107,5 +114,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   updateExperienceFromForms();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
