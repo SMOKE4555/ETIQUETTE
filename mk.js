@@ -1,15 +1,26 @@
 const container = document.querySelector('.one-layout');
-const card = document.querySelector('.square-card');
-const cardWidth = card ? card.offsetWidth + 16 : 260; // 16px = gap
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
 
-document.querySelector('.next').addEventListener('click', () => {
-  container.scrollBy({ left: cardWidth * 3, behavior: 'smooth' }); 
-  // scrolls 3 cards at a time
+function updateButtons() {
+  const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  prevBtn.style.display = container.scrollLeft > 0 ? 'block' : 'none';
+  nextBtn.style.display = container.scrollLeft < maxScrollLeft ? 'block' : 'none';
+}
+
+nextBtn.addEventListener('click', () => {
+  container.scrollBy({ left: 260, behavior: 'smooth' });
+  setTimeout(updateButtons, 300);
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-  container.scrollBy({ left: -cardWidth * 3, behavior: 'smooth' });
+prevBtn.addEventListener('click', () => {
+  container.scrollBy({ left: -260, behavior: 'smooth' });
+  setTimeout(updateButtons, 300);
 });
+
+// Run on page load & when scrolling
+container.addEventListener('scroll', updateButtons);
+document.addEventListener('DOMContentLoaded', updateButtons);
 // experince.js
 
 // Get references to container and preview list

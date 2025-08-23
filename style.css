@@ -828,19 +828,22 @@ footer{
     display: flex;
     align-items: center;
     position: relative;
-    max-width: 800px;
-    overflow: hidden;
+    max-width: 100%;
+    
     margin: auto;
   }
   .one-layout{
     display: flex;
-    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+   overflow-x: auto;
     scroll-behavior: smooth;
+    margin: 0 auto;
     gap: 1rem;
     padding: 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
-
   }
   .one-layout::-webkit-scrollbar{
     display: none;
