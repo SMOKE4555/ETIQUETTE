@@ -531,9 +531,12 @@ article{
   gap: var(--size-900);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-800);
+   padding: 8px;
+   border-radius: 8px ;
 }
   .nav-list a{
     text-decoration: none;
+    padding: 1rem;
   }
   .nav-list a:hover,
   .nav-list a:focus{
@@ -567,11 +570,13 @@ article{
     gap: var(--size-600);
     text-align: center;
     font-weight: var(--fw-bold);
+    
    
   }
 
   .primary-navigation[data-visible] {
     display: block;
+   
   }
   .mobile-nav-toggle {
     display: inline-block;
