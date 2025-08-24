@@ -562,7 +562,7 @@ article{
     /* max-height: 0; */
     order: 2;
     /* transition: max-height 0.3s ease; */
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.221);
     width: 100%;
   }
 
