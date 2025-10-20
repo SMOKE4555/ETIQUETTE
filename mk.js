@@ -21,7 +21,7 @@ prevBtn.addEventListener('click', () => {
 // Run on page load & when scrolling
 container.addEventListener('scroll', updateButtons);
 document.addEventListener('DOMContentLoaded', updateButtons);
-// experince.js
+// experience.js
 
 // Get references to container and preview list
 const experienceFormsContainer = document.getElementById("experience-forms-container");
@@ -62,7 +62,7 @@ function createExperienceForm(id) {
       </div> 
       <div class="description">
         <label>Description</label>
-        <textarea class="eddescription" placeholder=".Helped with monthly financial reports and data entry"></textarea>
+        <textarea class="addescription" placeholder=".Helped with monthly financial reports and data entry"></textarea>
       </div>
       <button type="button" class="remove-experience-btn">Remove</button>
       
@@ -109,7 +109,7 @@ function updateExperienceFromForms() {
     const JobTitle = entry.querySelector(".job-title").value.trim();
     const startDate = entry.querySelector(".start-date").value.trim();
     const endDate = entry.querySelector(".end-date").value.trim();
-    const description = entry.querySelector(".eddescription").value.trim();
+    const description = entry.querySelector(".addescription").value.trim();
 
     const li = document.createElement("li");
     li.innerHTML = `
