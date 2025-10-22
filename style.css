@@ -1140,7 +1140,9 @@ button{
 
 
     .resume {
-    
+      border: 2px solid red;
+      display: grid;
+      grid-template-columns: auto auto; 
       font-size: 11px;
       width: 100%;
       max-width: 960px;
@@ -1156,7 +1158,7 @@ button{
     }
    
     .sidebar{
-      width: 30%;
+      /* width: 30%; */
       background-color: hsl(0, 0%, 95%);
       color:hsl(202, 14%, 33%);
       padding: 30px 20px;

@@ -1,3 +1,6 @@
+
+
+
 //  education.js
 
 // //  Get references to container and preview list
@@ -108,7 +111,7 @@
 //    updateEducationFromForms();
 //  });
 
-
+// this
  const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 
@@ -123,7 +126,7 @@ navToggle.addEventListener("click", () => {
     navToggle.setAttribute("aria-expanded", "true");
   }
 });
-
+// this
 //  const navToggle = document.querySelector(".mobile-nav-toggle");
 //  const primaryNav = document.querySelector(".primary-navigation");
 //  const overlay = document.getElementById("menu-overlay");
@@ -143,7 +146,7 @@ navToggle.addEventListener("click", () => {
 //      document.body.classList.add("menu-open");
 //    }
 //  });
-
+// this
 const offers = document.querySelectorAll('.offer-container');
 
 offers.forEach(offer => {
@@ -166,7 +169,7 @@ offers.forEach(offer => {
     arrow.style.transform = 'translateX(0)';
   });
 });
-
+this
 
 //  ...existing code...
 
@@ -213,3 +216,4 @@ jQuery(document).ready(function($) {
       quoteContainer.classList.add("fade-in");
     }
   });
+// this
